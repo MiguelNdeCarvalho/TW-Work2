@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Produtos</title>
+    </head>
+    
+    <body>
+
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div id="procurar">
+                    <form action="search.html">
+                        <input type="text" placeholder="Pesquisar" name="pesquisa">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <a href="advanced_search.html">Avançada</a>
+            </div>
+        </div>
+
+        <div id="categorias">
+            <h2>Categorias:</h2>
+            <ul>
+                <li><a href="#">Tudo</a></li>
+                <li><a class="active" href="#">Hoodies</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Meias</a></li>
+                <li><a href="#">Cap</a></li>
+            </ul>
+        </div>
+
+        <div id="detalhes_do_produto">
+            <h1>Hoodie Guardanapo</h1>
+                <a href="img/products/guardanapo.png"><img src="img/products/guardanapo.png"  alt="guardanapo" class="product_img"></a>
+                <div id="description">
+                    <p><h3>T-shirt unissexo:</h3></p>
+                    <ul>
+                        <li>Logo Ric bordado à frente</li> 
+                        <li>Malha jersey 155g/m2</li> 
+                        <li>Corte regular</li> 
+                    </ul>
+                    <p><h3>Composição:</h3></p>
+                    <ul>
+                        <li>100% Algodão orgânico penteado</li>
+                    </ul>
+                    <p><h3>Cuidados de manutenção:</h3></p>
+                    <ul>
+                        <li>Lavar do avesso, a 30º, com cores semelhantes</li>
+                        <li>Passar a ferro do avesso, na temperatura mínima</li>
+                        <li>Não colocar na máquina de secar</li>
+                        <li>Não limpar a seco</li>
+                        <li>Não utilizar lixívia</li>
+                    </ul>
+                    <div id="info">
+                        <h2 class="price">Preço: 30€</h2>
+                        <p>Portes de envios: 2.99€</p>
+                        <p>Data de entrega prevista: 23 de Dezembro</p>
+                        <p>Métodos de pagamento disponíveis:</p>
+                        <img src="img/payments.png" alt="payments" class="payments">
+                        <p>Stock: <strong>10</strongz></p>
+                        <form>
+                            <label for="fname">Quantidade:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                            <input type="submit" value="Adicionar ao carrinho">
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
+    </body>
+
+</html>
