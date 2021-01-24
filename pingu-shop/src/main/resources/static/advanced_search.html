@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Pesquisa Avançada</title>
+    </head>
+    
+    <body>
+
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div id="procurar">
+                    <form action="search.html">
+                        <input type="text" placeholder="Pesquisar" name="pesquisa">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <a href="advanced_search.html">Avançada</a>
+            </div>
+        </div>
+
+        <div id="pesquisa_avancada">
+            <h1>Pesquisa Avançada</h1>
+            <form action="search.html">
+                <h4>Descrição do produto:</h4>
+                <input type="text" name="Name" value="" maxlength="24" required>
+                <br>
+                
+                <h4>Categorias:</h4>
+                <br>
+                <input type="radio" id="categoria1" name="categoria" value="tudo" checked>
+                <label for="categoria1">Tudo</label><br>
+                <input type="radio" id="categoria2" name="categoria" value="hoodies">
+                <label for="categoria1">Hoodies</label><br>
+                <input type="radio" id="categoria3" name="categoria" value="t_shirts">
+                <label for="categoria1">T-Shirts</label><br>
+                <input type="radio" id="categoria4" name="categoria" value="meias">
+                <label for="categoria1">Meias</label><br>
+                <input type="radio" id="categoria5" name="categoria" value="cap">
+                <label for="categoria1">Cap</label><br>
+                
+                <h4>Intervalo de preço(preço mínimo e máximo) </h4>
+                <br>
+                <h5>Preço mínimo:</h5>
+                <input type="text" name="Name" value="" maxlength="24" required>
+                <br>
+                <h5>Preço máximo:</h5>
+                <input type="text" name="Name" value="" maxlength="24" required>
+
+                <br>
+                <h4>Localização do produto:</h4>
+                <select id="local" name="locallist" required>
+                    <option value="estarreja">Estarreja</option>
+                    <option value="porto">Porto</option>
+                    <option value="lisboa">Lisboa</option>
+                    <option value="evora">Évora</option>
+                </select>
+                
+                <br>
+                
+                <h4>Data em que o produto foi listado na loja pela 1ª vez:</h4>
+                <input type="date" id="listado" name="produto_listado" required>
+                
+                <br>
+
+                <h4>Data em que o produto deixou de estar disponível para venda:</h4>
+                <input type="date" id="indisponivel" name="produto_indisponivel" required>
+
+                <br>
+                <input type="submit" value="Procurar">
+                <input type="reset" value="Limpar">
+            </form>
+            
+
+        </div>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
+    </body>
+
+</html>
