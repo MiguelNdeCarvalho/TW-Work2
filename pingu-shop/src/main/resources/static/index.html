@@ -12,8 +12,9 @@
         <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         <title>PinguShop - Início</title>
     </head>
-    
+
     <body>
+        
         
         <div id="cabecalho">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
@@ -22,8 +23,68 @@
                         <input type="text" placeholder="Pesquisar" name="pesquisa">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
+                    <a onclick="document.getElementById('registar').style.display='block'">Registar</a>
+                    <a onclick="document.getElementById('entrar').style.display='block'">Entrar</a>
                     <a href="advanced_search.html">Avançada</a>
             </div>
+        </div>
+
+        <div id="entrar" class="login">
+            <span onclick="document.getElementById('entrar').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times-circle"></i></span>
+            <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                <h1>Entrar</h1>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+            
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('entrar').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="registar" class="login" style="">
+            <span onclick="document.getElementById('registar').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times-circle"></i></span>
+            <form class="modal-content" action="">
+                <div class="container">
+                <h1>Registar</h1>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+            
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('registar').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+                </div>
+            </form>
         </div>
 
         <div id="main">

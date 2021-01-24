@@ -237,7 +237,7 @@ body {
     width: 100%;
   }
 
-  #cabecalho #procurar form button, #cabecalho #procurar a{
+  #cabecalho #procurar form button, #cabecalho #procurar a, button{
     width: 100%;
     margin-top: 0.1em;
   }
@@ -341,7 +341,7 @@ body {
   margin: 1.2em 0px 0px 0px;
 }
 
-#cabecalho #procurar a{
+#cabecalho #procurar a, button{
   float: right;
   display: block;
   text-align: center;
@@ -414,4 +414,96 @@ body {
 
 #main{
   display: table;
+}
+
+.login input[type=text], .login input[type=password]  {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.login input[type=text]:focus, .login input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.login button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.login button:hover {
+  opacity:1;
+}
+
+.login .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.login .cancelbtn, .login .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.login {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 50px;
+}
+
+.modal-content {
+  background-color: #404040;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1.5px solid #0d0d0d;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.login hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.login .close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #4f7075;
+}
+
+.login .close:hover, .login .close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.login .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
 }
