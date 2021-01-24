@@ -23,11 +23,13 @@ public class NewUserController {
 			@RequestParam(name="mail", required=false, defaultValue="") String mail,
 			@RequestParam(name="username", required=false, defaultValue="") String username,
 			@RequestParam(name="password", required=false, defaultValue="") String password,
-			@RequestParam(name="role", required=false, defaultValue="user") String role,
+			// @RequestParam(name="role", required=false, defaultValue="user") String role,
 			Model model) 
 	{
 		String encodedPassword = new BCryptPasswordEncoder().encode(password);
-        repository.save(new User(firstName, lastName, mail, username, encodedPassword, "ROLE_" + role.toUpperCase()));
-		return "index";
+        repository.save(new User(firstName, lastName, mail, username, encodedPassword, "ROLE_" + "USER"));
+		
+		
+		return "registar-sucesso";
 	}
 }
