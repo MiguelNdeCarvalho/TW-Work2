@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+	<link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<title>PinguShop - Registo</title>
+</head>
+<body>
+    <div id="cabecalho">
+		<a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+		<div id="procurar">
+				<form action="search.html">
+					<input type="text" placeholder="Pesquisar" name="pesquisa">
+					<button type="submit"><i class="fas fa-search"></i></button>
+				</form>
+				<a href="advanced_search.html">Avançada</a>
+		</div>
+	</div>
+
+	<div id="main">
+		<form method='post' th:action='@{/new-user}'>
+			<label>Insira o seu nome:</label>
+			<input type="text" id="firstName" name="firstName"/> 
+			</br>
+			<label>Insira o seu apelido:</label>
+			<input type="text" id="lastName" name="lastName"/> 	
+			</br>
+			<label>Insira o seu mail:</label>
+			<input type="text" id="mail" name="mail"/> 
+			</br>
+			<label>Insira o username:</label>
+			<input type="text" id="username" name="username"/> 
+			</br>
+			<label>Insira a password:</label>
+			<input type="text" id="password" name="password"/> 
+			</br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div id="about">
+		<a href="#">About this page</a>
+	</div>
+
+</body>
+</html>
