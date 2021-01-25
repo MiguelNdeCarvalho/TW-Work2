@@ -416,6 +416,10 @@ body {
   display: table;
 }
 
+.login *{
+  box-sizing: border-box;
+}
+
 .login input[type=text], .login input[type=password]  {
   width: 100%;
   padding: 15px;
@@ -504,6 +508,6 @@ body {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
-     width: 100%;
+    width: 100%;
   }
 }
