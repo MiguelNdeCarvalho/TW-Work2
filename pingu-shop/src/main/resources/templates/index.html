@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
@@ -25,18 +26,23 @@
     </head>
 
     <body>
-        
-        
         <div id="cabecalho">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div sec:authorize="isAnonymous()" id="anonymous">
+                <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
+                <button onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
+            </div>
+            <div sec:authorize="isAuthenticated()" id="authenticated">
+                <form  method='post' th:action='@{/logout}'>
+                    <input type="submit" value="Sair">
+                </form>
+            </div>
             <div id="procurar">
-                    <form action="search.html">
-                        <input type="text" placeholder="Pesquisar" name="pesquisa">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                    <a onclick="document.getElementById('registar').style.display='block'">Registar</a>
-                    <a onclick="document.getElementById('entrar').style.display='block'">Entrar</a>
-                    <a href="advanced_search.html">Avançada</a>
+                <form action="search.html">
+                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a class="advanced" href="advanced_search.html">Avançada</a>
             </div>
         </div>
 
@@ -47,7 +53,7 @@
                 <h1>Entrar</h1>
                 <hr>
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="name" name="username" required>
+                <input type="text" placeholder="Username" name="username" required>
             
                 <label for="password"><b>Password</b></label>
                 <input type="password" placeholder="Password" name="password" required>
