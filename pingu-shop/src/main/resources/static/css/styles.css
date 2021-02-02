@@ -242,6 +242,10 @@ body {
     margin-top: 0.1em;
   }
 
+  #cabecalho #anonymous{
+    float: none;
+  }
+
   #cabecalho img{
     float: none;
     display: block;
@@ -276,6 +280,11 @@ body {
 
   #cabecalho #procurar{
     float: right;
+  }
+
+  #cabecalho #anonymous{
+    float: right;
+    padding-left: 1em;
   }
 
   #cabecalho img{
@@ -318,6 +327,11 @@ body {
     float: left;
     width: 205px;
   }
+
+  #cabecalho #anonymous{
+    float: right;
+    padding-left: 1em;
+  }
 }
 
 /*----------------CABEÇALHO------------------*/
@@ -350,6 +364,7 @@ body {
   font-size: 17px;
   background-color: #62acb573;
   color: white;
+  border: 0px;
 }
 
 #cabecalho #procurar .advanced{
@@ -385,6 +400,12 @@ body {
   background: #295157;
 }
 
+#cabecalho #anonymous{
+  overflow: auto;
+  margin: 1.2em 0px 0px 0px;
+}
+
+#cabecalo #procurar #anonymous
 #about{
   padding: 1em 1em 1em 1em;
   line-height: 1em;
