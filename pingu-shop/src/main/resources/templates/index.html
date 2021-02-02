@@ -30,7 +30,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
             <div sec:authorize="isAnonymous()" id="anonymous">
                 <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
-                <button onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
+                <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
             </div>
             <div sec:authorize="isAuthenticated()" id="authenticated">
                 <form  method='post' th:action='@{/logout}'>
