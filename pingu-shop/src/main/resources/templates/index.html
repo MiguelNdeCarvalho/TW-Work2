@@ -19,7 +19,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 if (confirm.value === password.value) {
                     confirm.setCustomValidity('');
                 } else {
-                    confirm.setCustomValidity('As Palavras-Chaves não coincidem!');
+                    confirm.setCustomValidity('As Palavras-Passes não coincidem!');
                 }
             }
         </script>
@@ -69,7 +69,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
             </form>
         </div>
 
-        <div id="registar" class="login" style="">
+        <div id="registar" class="login">
             <span onclick="document.getElementById('registar').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times-circle"></i></span>
             <form class="modal-content" method="post" th:action="@{/new-user}">
                 <div class="container">
