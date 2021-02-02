@@ -1,5 +1,8 @@
 package org.pingu.shop.jpa;
 
+import java.lang.reflect.Parameter;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +31,7 @@ public class NewUserController {
 	{
 		String encodedPassword = new BCryptPasswordEncoder().encode(password);
         repository.save(new User(firstName, lastName, mail, username, encodedPassword, "ROLE_" + "USER"));
-		
-		
-		return "registar-sucesso";
+
+		return "index";
 	}
 }
