@@ -242,7 +242,7 @@ body {
     margin-top: 0.1em;
   }
 
-  #cabecalho #anonymous{
+  #cabecalho #authentication{
     float: none;
   }
 
@@ -282,7 +282,7 @@ body {
     float: right;
   }
 
-  #cabecalho #anonymous{
+  #cabecalho #authentication{
     float: right;
     padding-left: 1em;
   }
@@ -328,7 +328,7 @@ body {
     width: 205px;
   }
 
-  #cabecalho #anonymous{
+  #cabecalho #authentication{
     float: right;
     padding-left: 1em;
   }
@@ -400,12 +400,12 @@ body {
   background: #295157;
 }
 
-#cabecalho #anonymous{
+#cabecalho #authentication{
   overflow: auto;
   margin: 1.2em 0px 0px 0px;
 }
 
-#cabecalo #procurar #anonymous
+#cabecalo #procurar #authentication
 #about{
   padding: 1em 1em 1em 1em;
   line-height: 1em;

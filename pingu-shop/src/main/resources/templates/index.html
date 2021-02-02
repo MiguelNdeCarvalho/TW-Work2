@@ -28,13 +28,13 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <body>
         <div id="cabecalho">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
-            <div sec:authorize="isAnonymous()" id="anonymous">
+            <div sec:authorize="isAnonymous()" id="authentication">
                 <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
                 <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
             </div>
-            <div sec:authorize="isAuthenticated()" id="authenticated">
+            <div sec:authorize="isAuthenticated()" id="authentication">
                 <form  method='post' th:action='@{/logout}'>
-                    <input type="submit" value="Sair">
+                    <button name="submit" value="Sair">Sair</button>
                 </form>
             </div>
             <div id="procurar">
