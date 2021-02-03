@@ -495,6 +495,7 @@ body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
   padding-top: 50px;
 }
 
