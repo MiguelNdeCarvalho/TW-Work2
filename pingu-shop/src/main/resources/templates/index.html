@@ -53,17 +53,14 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 <h1>Entrar</h1>
                 <hr>
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" required>
+                <input type="text" placeholder="Introduza o Username" name="username" required>
             
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" required>
-            
-                <div th:if="${param.error}">
-                    Invalid username and password.
-                </div>
+                <label for="password"><b>Palavra-Passe</b></label>
+                <input type="password" placeholder="Introduza a Palavra-Passe" name="password" required>
+
                 <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('entrar').style.display='none'" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <button type="button" onclick="document.getElementById('entrar').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <button type="submit" class="signupbtn">Entrar</button>
                 </div>
                 </div>
             </form>
