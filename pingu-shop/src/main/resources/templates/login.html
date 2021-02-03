@@ -1,20 +1,104 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title>Spring Security Example </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Entrar</title>
+        <script>
+            function onChange() {
+                let password = document.querySelector('#registar input[name=password]');
+                let confirm = document.querySelector('#registar input[name=password-repeat]');
+                if (confirm.value === password.value) {
+                    confirm.setCustomValidity('');
+                } else {
+                    confirm.setCustomValidity('As Palavras-Passes não coincidem!');
+                }
+            }
+        </script>
     </head>
+
     <body>
-        <div th:if="${param.error}">
-            Invalid username and password.
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <!-- <div sec:authorize="isAnonymous()" id="authentication">
+                <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
+                <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
+            </div> -->
+            <div id="procurar">
+                <form action="search.html">
+                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a class="advanced" href="advanced_search.html">Avançada</a>
+            </div>
         </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
+
+        <div id="registar" class="login">
+            <span onclick="document.getElementById('registar').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times-circle"></i></span>
+            <form class="modal-content" method="post" th:action="@{/new-user}">
+                <div class="container">
+                <h1>Registar</h1>
+                <hr>
+                <label for="mail"><b>E-mail</b></label>
+                <input type="email" placeholder="Introduza o E-mail" name="mail" id="mail" required>
+            
+                <label for="firstName"><b>Primeiro Nome</b></label>
+                <input type="text" placeholder="Introduza o Primeiro Nome" name="firstName" id="firstName" required>
+
+                <label for="lastName"><b>Último Nome</b></label>
+                <input type="text" placeholder="Introduza o Último Nome" name="lastName" id="lastName" required>
+                
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Introduza o Username" name="username" id="username" required>
+
+                <label for="password"><b>Palavra-Passe</b></label>
+                <input type="password" placeholder="Introduza a Palavra-Passe" name="password" id="password" onChange="onChange()" required>
+            
+                <label for="password-repeat"><b>Repita a Palavra-Passe</b></label>
+                <input type="password" placeholder="Introduza novamente a Palavra-Passe" name="password-repeat" id="password-repeat" onChange="onChange()" required>
+            
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('registar').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <button type="submit" class="signupbtn">Registar</button>
+                </div>
+                </div>
+            </form>
         </div>
-        <form th:action="@{/login}" method="post">  
-            <div><label> User Name : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
+
+        <form method="post" th:action="@{/login}" id="loginformpage">
+            <div class="container">
+                <h1>Entrar</h1>
+                <hr>
+                
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Username" name="username" id="username" required>
+            
+                <label for="password"><b>Palavra-Passe</b></label>
+                <input type="password" placeholder="Palavra-Passe" name="password" id="password" required>
+                <div th:if="${param.error}" class="alert">    
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>Username ou Palavra-Passe errado.</strong>
+                </div>
+                <button type="submit" class="registerbtn">Entrar</button>
+            </div>
+            
+            <div class="container signin">
+                <p>Ainda não tem conta? <a onclick="document.getElementById('registar').style.display='block'">Registar</a>.</p>
+            </div>
         </form>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
     </body>
+
 </html>
