@@ -539,6 +539,11 @@ body {
   }
 }
 
+#loginformpage {
+  background-color: #1a1a1a;
+  padding: 0.5em;
+}
+
 #loginformpage * {
   box-sizing: border-box;
 }
@@ -587,7 +592,6 @@ body {
 }
 
 #loginformpage .signin {
-  background-color: #1a1a1a;
   text-align: center;
 }
 
