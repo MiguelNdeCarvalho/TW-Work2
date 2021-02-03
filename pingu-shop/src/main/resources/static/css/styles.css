@@ -537,3 +537,65 @@ body {
     width: 100%;
   }
 }
+
+#loginformpage * {
+  box-sizing: border-box;
+}
+
+#loginformpage .container {
+  padding: 16px;
+  background-color:#1a1a1a;
+}
+
+#loginformpage .container input[type=text], #loginformpage .container input[type=password] {
+  width: 100%;
+  padding: 1em;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#loginformpage .container input[type=text]:focus, #loginformpage .container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#loginformpage hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+#loginformpage .registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#loginformpage .registerbtn:hover {
+  opacity: 1;
+}
+
+#loginformpage a {
+  color: dodgerblue;
+}
+
+#loginformpage .signin {
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.alert {
+  width: 100%;
+  background-color: #271B19;
+}
+
+.alert i {
+  color: #FF4E3C;
+  margin-right: 0.5em;
+}
