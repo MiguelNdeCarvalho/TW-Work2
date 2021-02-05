@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Adicionar Produto</title>
+    </head>
+
+    <body>
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div sec:authorize="isAuthenticated()" id="authentication">
+                <form  method='post' th:action='@{/logout}'>
+                    <button name="submit" value="Sair">Sair</button>
+                </form>
+            </div>
+            <div id="procurar">
+                <form action="search.html">
+                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a class="advanced" href="advanced_search.html">Avançada</a>
+            </div>
+        </div>
+
+        <form method="post" th:action="@{/new-product}" id="formulario">
+            <div class="container">
+                <h1>Adicionar produto</h1>
+                <hr>
+                
+                <label for="name"><b>Nome do Produto</b></label>
+                <input type="text" placeholder="Introduza o Nome Produto" name="name" id="name" required>
+            
+                <label for="imgPath"><b>Localização da Imagem do Produto</b></label>
+                <input type="text" placeholder="Introduza a localização da imagem do produto" name="imgPath" id="imgPath" required>
+
+                <label for="desc"><b>Descrição do Produto</b></label>
+                <textarea type="text" placeholder="Introduza a descrição do produto" name="desc" id="desc" required></textarea>
+                <br>
+
+                <label for="price"><b>Preço do Produto</b></label>
+                <input type="text" placeholder="Introduza o preço do produto" name="price" id="price" required>
+
+                <button type="submit" class="registerbtn">Adicionar produto</button>
+            </div>
+        </form>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
+    </body>
+
+</html>
