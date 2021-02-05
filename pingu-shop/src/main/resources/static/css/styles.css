@@ -539,21 +539,22 @@ body {
   }
 }
 
-#loginformpage {
+#formulario {
   background-color: #1a1a1a;
   padding: 0.5em;
+  overflow: auto;
 }
 
-#loginformpage * {
+#formulario * {
   box-sizing: border-box;
 }
 
-#loginformpage .container {
+#formulario .container {
   padding: 16px;
   background-color:#1a1a1a;
 }
 
-#loginformpage .container input[type=text], #loginformpage .container input[type=password] {
+#formulario .container input[type=text], #formulario .container input[type=password], #formulario .container textarea {
   width: 100%;
   padding: 1em;
   margin: 5px 0 22px 0;
@@ -562,17 +563,17 @@ body {
   background: #f1f1f1;
 }
 
-#loginformpage .container input[type=text]:focus, #loginformpage .container input[type=password]:focus {
+#formulario .container input[type=text]:focus, #formulario .container input[type=password]:focus, #formulario .container textarea {
   background-color: #ddd;
   outline: none;
 }
 
-#loginformpage hr {
+#formulario hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
-#loginformpage .registerbtn {
+#formulario .registerbtn {
   background-color: #4F7075;
   color: white;
   padding: 16px 20px;
@@ -583,15 +584,15 @@ body {
   opacity: 0.9;
 }
 
-#loginformpage .registerbtn:hover {
+#formulario .registerbtn:hover {
   opacity: 1;
 }
 
-#loginformpage a {
+#formulario a {
   color: dodgerblue;
 }
 
-#loginformpage .signin {
+#formulario .signin {
   text-align: center;
 }
 
