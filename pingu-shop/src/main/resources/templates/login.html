@@ -28,10 +28,6 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <body>
         <div id="cabecalho">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
-            <!-- <div sec:authorize="isAnonymous()" id="authentication">
-                <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
-                <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
-            </div> -->
             <div id="procurar">
                 <form action="search.html">
                     <input type="text" placeholder="Pesquisar" name="pesquisa">
@@ -73,7 +69,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
             </form>
         </div>
 
-        <form method="post" th:action="@{/login}" id="formulario">
+        <form sec:authorize="isAnonymous()" method="post" th:action="@{/login}" id="formulario">
             <div class="container">
                 <h1>Entrar</h1>
                 <hr>
@@ -94,6 +90,12 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 <p>Não se encontra registado? <a onclick="document.getElementById('registar').style.display='block'">Registar</a></p>
             </div>
         </form>
+
+        <div sec:authorize="isAuthenticated()" id="formulario">
+            <h1>Entrar</h1>
+            <hr>
+            <h3>O Utilizador já se encontra autenticado.</h3>
+        </div>
 
         <div id="about">
             <a href="#">About this page</a>
