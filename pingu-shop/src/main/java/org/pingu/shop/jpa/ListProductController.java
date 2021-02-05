@@ -17,7 +17,7 @@ public class ListProductController {
     @Autowired
     private ProductRepository repository;
 	
-	@GetMapping("/list-products")
+	@GetMapping(value={"", "/", "/index"})
 	public String listProduct(Model model) 
 	{
 		List<Product> productList = (List<Product>) repository.findAll();
