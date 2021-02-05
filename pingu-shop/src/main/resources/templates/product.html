@@ -11,7 +11,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-        <title>PinguShop - Início</title>
+        <title>PinguShop - Produto</title>
         <script>
             function onChange() {
                 let password = document.querySelector('#registar input[name=password]');
@@ -98,39 +98,37 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
             </form>
         </div>
 
-        <div id="main">
-            <div id="categorias">
-                <h2>Categorias:</h2>
-                <ul>
-                    <li><a href="#">Tudo</a></li>
-                    <li><a class="active" href="#">Hoodies</a></li>
-                    <li><a href="#">T-Shirts</a></li>
-                    <li><a href="#">Meias</a></li>
-                    <li><a href="#">Cap</a></li>
-                </ul>
-            </div>
-    
-            <div id="produtos">
-                <div id="result">
-                    <h4>1 - 5 de 30 resultados</h4>
-                </div>
-                
-                <tr tH:each="product: ${productList}">
-                    <div id="product">
-                        <h2><a th:href="@{/product(id=${product.id})}"><td th:text="${product.name}"/></a></h2>
-                        <a th:href="@{/product(id=${product.id})}"><img th:src="${product.imgPath}" alt="guardanapo"></img></a>
-                        <p> <td th:text="${product.desc}"/></p>
-                        <p class="price"><td th:text="'Preço: ' + ${product.price} + '€'"/></p>
+        
+        <div id="categorias">
+            <h2>Categorias:</h2>
+            <ul>
+                <li><a href="#">Tudo</a></li>
+                <li><a class="active" href="#">Hoodies</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Meias</a></li>
+                <li><a href="#">Cap</a></li>
+            </ul>
+        </div>
+            
+        <div id="detalhes_do_produto">
+            <h1><td th:text="${product.name}"/></h1>
+                <a th:href="@{${product.imgPath}}"><img th:src="${product.imgPath}"  alt="guardanapo" class="product_img"></a>
+                <div id="description">
+                    <td th:text="${product.desc}"/>
+                    <div id="info">
+                        <h2 class="price"><td th:text="'Preço: ' + ${product.price} + '€'"/></h2>
+                        <p>Portes de envios: 2.99€</p>
+                        <p>Data de entrega prevista: 10 de Maio de 2021</p>
+                        <p>Métodos de pagamento disponíveis:</p>
+                        <img src="img/payments.png" alt="payments" class="payments">
+                        <p>Stock: <strong>10</strongz></p>
+                        <form>
+                            <label for="fname">Quantidade:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                            <input type="submit" value="Adicionar ao carrinho">
+                        </form>
                     </div>
-                </tr>
-                
-                <div id="page_navigation">
-                    <strong>1</strong>
-                    <strong><a class="pages" href="#">2</a></strong>
-                    <strong><a class="pages" href="#">3</a></strong>
-                    <a class="next_page" href="#"><i class="fas fa-chevron-right"></i></a>
                 </div>
-            </div>
         </div>
 
         <div id="about">
@@ -138,5 +136,4 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
         </div>
 
     </body>
-
 </html>

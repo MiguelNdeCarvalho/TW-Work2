@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class ListProductController {
+public class ShowProductController {
 
     @Autowired
     private ProductRepository repository;
 	
-	@GetMapping(value={"", "/", "/index"})
-	public String listProduct(Model model) 
+	@GetMapping("/product")
+	public String showProduct(
+        @RequestParam(name="id", required=false, defaultValue="") long id,
+        Model model) 
 	{
-		List<Product> productList = (List<Product>) repository.findAll();
-
-		model.addAttribute("productList", productList);
-		System.out.print(productList);
-		return "index";
+		Product product = repository.findById(id);
+		model.addAttribute("product", product);
+		return "product";
 	}
 }
