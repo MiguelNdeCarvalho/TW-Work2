@@ -23,7 +23,6 @@ public class ListProductController {
 		List<Product> productList = (List<Product>) repository.findAll();
 
 		model.addAttribute("productList", productList);
-		System.out.print(productList);
 		return "index";
 	}
 }
