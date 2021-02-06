@@ -38,8 +38,8 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 </form>
             </div>
             <div id="procurar">
-                <form action="search.html">
-                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                <form method='post' th:action='@{/search}'>
+                    <input type="text" placeholder="Pesquisar" name="search" id="search">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
                 <a class="advanced" href="advanced_search.html">Avançada</a>
