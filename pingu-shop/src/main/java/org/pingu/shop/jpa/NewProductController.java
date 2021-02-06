@@ -21,7 +21,7 @@ public class NewProductController {
 			@RequestParam(name="price", required=true, defaultValue="") Float price,
 			Model model) 
 	{
-		productRepository.save(new Product(name,imgPath,desc,price));
+		productRepository.save(new Product(name,"/img/products/" + imgPath,desc,price));
 		return "index";
 	}
 }
