@@ -38,8 +38,8 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 </form>
             </div>
             <div id="procurar">
-                <form action="search.html">
-                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                <form method='post' th:action='@{/search}'>
+                    <input type="text" placeholder="Pesquisar" name="search" id="search">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
                 <a class="advanced" href="advanced_search.html">Avançada</a>
@@ -112,7 +112,9 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     
             <div id="produtos">
                 <div id="result">
-                    <h4>1 - 5 de 30 resultados</h4>
+                    <h4 th:if="${#arrays.length(productList) == 0 && fromSearch == 'true'}">Não foram encontrados resultados para a sua pesquisa!</h4>
+		    <h4 th:if="${#arrays.length(productList) != 0 && fromSearch == 'true'}">Foram encontrados <span th:text="${#arrays.length(productList)}"></span> resultados correspondentes à sua pesquisa!</h4>
+		    <h4 th:if="${#arrays.length(productList) != 0"><span th:text="${#arrays.length(productList)}"></span> itens encontrados</h4>
                 </div>
                 
                 <tr tH:each="product: ${productList}">
