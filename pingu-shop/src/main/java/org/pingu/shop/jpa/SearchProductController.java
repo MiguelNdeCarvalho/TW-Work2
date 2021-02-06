@@ -23,6 +23,7 @@ public class SearchProductController {
         List<Product> productList = (List<Product>) repository.findByNameContainingIgnoreCase(search);
 
         model.addAttribute("productList", productList);
-		return "index";
+	model.addAttribute("fromSearch", "true");
+	return "index";
 	}
 }
