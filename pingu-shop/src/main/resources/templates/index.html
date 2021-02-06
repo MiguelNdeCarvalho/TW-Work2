@@ -112,7 +112,9 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     
             <div id="produtos">
                 <div id="result">
-                    <h4 th:if="${search == 'true'}"><span th:text="${#arrays.length(productList)}"></span> resultados encontrados</h4>
+                    <h4 th:if="${#arrays.length(productList) == 0 && fromSearch == 'true'}">Não foram encontrados resultados para a sua pesquisa!</h4>
+		    <h4 th:if="${#arrays.length(productList) != 0 && fromSearch == 'true'}">Foram encontrados <span th:text="${#arrays.length(productList)}"></span> resultados correspondentes à sua pesquisa!</h4>
+		    <h4 th:if="${#arrays.length(productList) != 0"><span th:text="${#arrays.length(productList)}"></span> itens encontrados</h4>
                 </div>
                 
                 <tr tH:each="product: ${productList}">
