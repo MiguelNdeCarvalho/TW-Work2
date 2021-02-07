@@ -605,3 +605,14 @@ body {
   color: #FF4E3C;
   margin-right: 0.5em;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #404040;
+  text-align: left;
+  padding: 8px;
+}
