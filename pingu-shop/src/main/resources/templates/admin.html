@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Entrar</title>
+    </head>
+    <body>
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div id="procurar">
+                <form action="search.html">
+                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a class="advanced" href="advanced_search.html">Avançada</a>
+            </div>
+        </div>
+
+        <div id="formulario">
+            <h1>Administração</h1>
+            <hr>
+
+            <h2>Utilizadores</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Primeiro Nome</th>
+                    <th>Último Nome</th>
+                    <th>Mail</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
+
+                <tr th:each="user: ${userList}">
+                    <th th:text="${user.id}"/>
+                    <th th:text="${user.firstName}"/>
+                    <th th:text="${user.lastName}">
+                    <th th:text="${user.mail}"/>
+                    <th th:text="${user.username}"/>
+                    <th th:text="${user.role}"/>
+                </tr>
+            </table>
+
+            <h2>Produtos</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Produto</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+
+                <tr th:each="product: ${productList}">
+                    <th th:text="${product.id}"/>
+                    <th th:text="${product.name}"/>
+                    <th th:text="${product.desc}">
+                    <th th:text="${product.price} + '€'"/>
+                    <th> 
+                        <form method='post' th:action="@{/remove-product?id=} + ${product.id}">
+                            <button type="submit" value="Sair"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
+    </body>
+
+</html>
