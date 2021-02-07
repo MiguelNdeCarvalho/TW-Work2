@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import java.time.*; 
 
 @Entity
 public class Orders {
@@ -17,7 +18,9 @@ public class Orders {
 	private Long id;
 
 	@Column(nullable = false)
-	private String date;
+    private int quantity;
+    private Float price;
+	private LocalDateTime date;
 	
 
 	@ManyToOne
@@ -27,20 +30,23 @@ public class Orders {
     @ManyToOne
     @JoinColumn(name="productID")
     private Product product;
+    
 
 	protected Orders() {}
 
-	public Orders(User user, Product product, String date) {
+	public Orders(User user, Product product, int quantity, Float price, LocalDateTime date) {
 		this.user = user;
 		this.product = product;
+        this.quantity = quantity;
+        this.price = price;
         this.date = date;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Orders[id=%d, userID=%d, productID='%s', date='%s']",
-				id, user.getId(), product.getId(), date.toString());
+				"Orders[id=%d, userID=%d, productID='%s', quantity=%d, price=%f, date='%s']",
+				id, user.getId(), product.getId(), quantity, price ,date.toString());
 	}
 	
 	public Long getId() {
@@ -55,7 +61,15 @@ public class Orders {
 		return product.getId();
     }
 
-    public String getDate() {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public LocalDateTime getDate() {
         return date;
     }
 }
