@@ -33,8 +33,14 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
             </div>
             <div sec:authorize="isAuthenticated()" id="authentication">
-                <form  method='post' th:action='@{/logout}'>
-                    <button name="submit" value="Sair">Sair</button>
+                <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_USER')" method='post' th:action='@{/perfil}'>
+                    <button type="submit" value="Perfil">Perfil</button>
+                </form>
+                <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_ADMIN')" method='post' th:action='@{/admin}'>
+                    <button type="submit" value="Perfil">Administração</button>
+                </form>
+                <form style="float: right;" method='post' th:action='@{/logout}'>
+                    <button type="submit" value="Sair">Sair</button>
                 </form>
             </div>
             <div id="procurar">
