@@ -29,18 +29,18 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
         <div id="cabecalho">
             <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
             <div sec:authorize="isAnonymous()" id="authentication">
-                <button onclick="document.getElementById('registar').style.display='block'">Registar</button>
-                <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'">Entrar</button>
+                <button onclick="document.getElementById('registar').style.display='block'"><i class="fas fa-user-plus"></i> Registar</button>
+                <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'"><i class="fas fa-sign-in-alt"></i> Entrar</button>
             </div>
             <div sec:authorize="isAuthenticated()" id="authentication">
                 <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_USER')" method='post' th:action='@{/perfil}'>
-                    <button type="submit" value="Perfil">Perfil</button>
+                    <button type="submit" value="Perfil"><i class="fas fa-user"></i> Perfil</button>
                 </form>
                 <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_ADMIN')" method='post' th:action='@{/admin}'>
-                    <button type="submit" value="Perfil">Administração</button>
+                    <button type="submit" value="Administração"><i class="fas fa-user-cog"></i> Administração</button>
                 </form>
                 <form style="float: right;" method='post' th:action='@{/logout}'>
-                    <button type="submit" value="Sair">Sair</button>
+                    <button type="submit" value="Sair"><i class="fas fa-sign-out-alt"></i> Sair</button>
                 </form>
             </div>
             <div id="procurar">
