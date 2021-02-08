@@ -21,9 +21,9 @@ public class NewOrdersController {
     
     @PostMapping("/new-order")
 	public String newOrder(
-			@RequestParam(name="clientID", required=true) String clientName, 
+			@RequestParam(name="clientName", required=true) String clientName, 
 			@RequestParam(name="productID", required=true) long productID,
-            @RequestParam(name="productID", required=true) int quantity,
+            @RequestParam(name="quantity", required=true) int quantity,
 			Model model)
 	{
 		
@@ -33,6 +33,6 @@ public class NewOrdersController {
         Float price = product.getPrice() * quantity;
 
 		ordersRepository.save(new Orders(user, product, quantity, price, date));
-		return "index";
+		return "redirect:/";
 	}
 }
