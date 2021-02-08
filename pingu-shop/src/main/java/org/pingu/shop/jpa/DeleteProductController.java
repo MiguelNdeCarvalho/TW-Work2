@@ -30,13 +30,6 @@ public class DeleteProductController {
 	{
 		productRepository.deleteById(id);
 
-        List<User> userList = (List<User>) userRepository.findAll();
-		List<Product> productList = (List<Product>) productRepository.findAll(); //Get all products
-        // List<Orders> ordersList = (List<Orders>) repository.findAll(); //Get all orders
-
-        model.addAttribute("userList", userList);
-		model.addAttribute("productList", productList);
-        // model.addAttribute("orderList", orderList);
-        return "admin";
+        return "redirect:/admin";
 	}
 }
