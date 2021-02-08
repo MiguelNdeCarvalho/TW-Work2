@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <title>PinguShop - Perfil</title>
+    </head>
+    <body>
+        <div id="cabecalho">
+            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <div id="procurar">
+                <form action="search.html">
+                    <input type="text" placeholder="Pesquisar" name="pesquisa">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a class="advanced" href="advanced_search.html">Avançada</a>
+            </div>
+        </div>
+
+        <div th:unless="${#authentication.name != #httpServletRequest.getParameter('clientName')}" id="formulario">
+            <h1>Bem-vindo, <span sec:authentication="name">Bob</span></h1>
+            <hr>
+
+            <h2>Encomendas realizadas</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>ID do User</th>
+                    <th>ID do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Data</th>
+                </tr>
+
+                <tr th:each="order: ${ordersList}">
+                    <th th:text="${order.id}"/>
+                    <th th:text="${order.getUserID()}"/>
+                    <th th:text="${order.getProductID()}"/>
+                    <th th:text="${order.quantity}"/>
+                    <th th:text="${order.price} + '€'"/>
+                    <th th:text="${#temporals.formatISO(order.date)}"/>
+                </tr>
+            </table>
+        </div>
+
+        <div th:if="${#authentication.name != #httpServletRequest.getParameter('clientName')}" id="formulario">
+            Não tem permissões para ver este perfil.
+        </div>
+
+        <div id="about">
+            <a href="#">About this page</a>
+        </div>
+
+    </body>
+
+</html>
