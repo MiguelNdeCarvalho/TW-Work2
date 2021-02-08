@@ -32,6 +32,6 @@ public class NewUserController {
 		String encodedPassword = new BCryptPasswordEncoder().encode(password);
         repository.save(new User(firstName, lastName, mail, username, encodedPassword, "ROLE_" + "USER"));
 
-		return "index";
+		return "redirect:/";
 	}
 }

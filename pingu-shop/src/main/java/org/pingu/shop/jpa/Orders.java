@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.CascadeType;
 import java.time.*; 
 
 @Entity
@@ -23,11 +24,11 @@ public class Orders {
 	private LocalDateTime date;
 	
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="userID")
 	private User user;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="productID")
     private Product product;
     

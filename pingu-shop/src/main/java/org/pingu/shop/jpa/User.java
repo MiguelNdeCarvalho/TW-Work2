@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,7 @@ public class User {
 	private Long id;
 	private String firstName, lastName, mail, username, password, role;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Orders> orders;
 
 	protected User() {}

@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 @Entity
 public class Product {
@@ -20,7 +21,7 @@ public class Product {
     private String name, imgPath, desc;
     private Float price;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private List<Orders> orders;
 
     protected Product() {}

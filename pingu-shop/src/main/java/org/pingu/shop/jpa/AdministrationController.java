@@ -33,7 +33,6 @@ public class AdministrationController {
         model.addAttribute("userList", userList);
 		model.addAttribute("productList", productList);
         model.addAttribute("ordersList", ordersList);
-        System.out.print(ordersList);
         return "admin";
 	}
 }

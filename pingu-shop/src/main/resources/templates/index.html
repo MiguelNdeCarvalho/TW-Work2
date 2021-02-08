@@ -27,7 +27,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
     <body>
         <div id="cabecalho">
-            <a href="index.html"><img src="img/logo.png" alt="pingu_logo"></a>
+            <a href="/"><img src="img/logo.png" alt="pingu_logo"></a>
             <div sec:authorize="isAnonymous()" id="authentication">
                 <button onclick="document.getElementById('registar').style.display='block'"><i class="fas fa-user-plus"></i> Registar</button>
                 <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'"><i class="fas fa-sign-in-alt"></i> Entrar</button>
