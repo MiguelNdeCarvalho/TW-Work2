@@ -72,6 +72,27 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                     </th>
                 </tr>
             </table>
+
+            <h2>Orders</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>ID do User</th>
+                    <th>ID do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Data</th>
+                </tr>
+
+                <tr th:each="order: ${ordersList}">
+                    <th th:text="${order.id}"/>
+                    <th th:text="${order.getUserID()}"/>
+                    <th th:text="${order.getProductID()}"/>
+                    <th th:text="${order.quantity}"/>
+                    <th th:text="${order.price} + '€'"/>
+                    <th th:text="${#temporals.formatISO(order.date)}"/>
+                </tr>
+            </table>
         </div>
 
         <div id="about">
