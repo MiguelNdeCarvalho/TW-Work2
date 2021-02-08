@@ -33,7 +33,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                 <button style="margin-right: 0.1em;" onclick="document.getElementById('entrar').style.display='block'"><i class="fas fa-sign-in-alt"></i> Entrar</button>
             </div>
             <div sec:authorize="isAuthenticated()" id="authentication">
-                <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_ADMIN')" method='get' th:action='@{/profile}'>
+                <form style="float: left; margin-right: 0.1em;" sec:authorize="hasRole('ROLE_USER')" method='get' th:action='@{/profile}'>
                     <input type="hidden" name="clientName" id="clientName" th:value="${#authentication.name}"/>
                     <button type="submit" value="Perfil"><i class="fas fa-user"></i> Perfil</button>
                 </form>
