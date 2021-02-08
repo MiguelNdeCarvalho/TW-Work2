@@ -20,19 +20,20 @@ public class AdministrationController {
     @Autowired
     private ProductRepository productRepository;
 
-    // @Autowired
-    // private OrderRepository orderRepository;
+    @Autowired
+    private OrdersRepository ordersRepository;
 	
 	@GetMapping(value={"/admin"})
 	public String adminControl(Model model) 
 	{
         List<User> userList = (List<User>) userRepository.findAll();
 		List<Product> productList = (List<Product>) productRepository.findAll(); //Get all products
-        // List<Orders> ordersList = (List<Orders>) repository.findAll(); //Get all orders
+        List<Orders> ordersList = (List<Orders>) ordersRepository.findAll(); //Get all orders
 
         model.addAttribute("userList", userList);
 		model.addAttribute("productList", productList);
-        // model.addAttribute("orderList", orderList);
+        model.addAttribute("ordersList", ordersList);
+        System.out.print(ordersList);
         return "admin";
 	}
 }
