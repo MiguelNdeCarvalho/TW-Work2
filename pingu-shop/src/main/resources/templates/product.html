@@ -122,10 +122,12 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                         <p>Métodos de pagamento disponíveis:</p>
                         <img src="img/payments.png" alt="payments" class="payments">
                         <p>Stock: <strong>10</strongz></p>
-                        <form>
+                        <form method='post' th:action="@{/new-order}">
+                            <input type="hidden" name="clientName" id="clientName" th:value="${#authentication.name}"/>
+                            <input type="hidden" name="productID" id="productID" th:value="${product.id}"/>
                             <label for="fname">Quantidade:</label>
                             <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
-                            <input type="submit" value="Adicionar ao carrinho">
+                            <input type="submit" value="Encomendar">
                         </form>
                     </div>
                 </div>

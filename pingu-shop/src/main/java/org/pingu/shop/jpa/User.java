@@ -15,8 +15,8 @@ public class User {
 	private Long id;
 	private String firstName, lastName, mail, username, password, role;
 
-	/* @OneToMany(mappedBy = "user")
-    private List<Orders> orders; */
+	@OneToMany(mappedBy = "user")
+	private List<Orders> orders;
 
 	protected User() {}
 
