@@ -22,6 +22,6 @@ public class NewProductController {
 			Model model) 
 	{
 		productRepository.save(new Product(name,"/img/products/" + imgPath,desc,price));
-		return "index";
+		return "redirect:/admin";
 	}
 }
