@@ -45,7 +45,7 @@ public class Orders {
 	@Override
 	public String toString() {
 		return String.format(
-				"Orders[id=%d, userID=%d, productID='%s', quantity=%d, price=%f, date='%s']",
+				"Orders[id=%d, userID=%d, productID=%d, quantity=%d, price=%f, date='%s']",
 				id, user.getId(), product.getId(), quantity, price ,date.toString());
 	}
 	
